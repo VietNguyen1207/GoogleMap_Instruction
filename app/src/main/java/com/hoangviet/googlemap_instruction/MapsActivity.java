@@ -125,9 +125,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             destinationMarker = mMap.addMarker(markerOptions);
 
                         }
-
-
-
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -140,19 +137,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 return false;
             }
         });
+
+
     }
 
     private void calculateDistanceToDestination() {
+        // destination is the same input from user when they enter in the search_bar.
         String destination = search_bar.getQuery().toString();
 
+        // destinationLatLng has been defined above
+        // then we pass the "destination" to the getDestinationAddress below to do the calculation
         destinationLatLng = getDestinationAddress(destination);
         if (destinationLatLng != null) {
+            // define distance as float type = and then calculate is using the calculateDistance method with ( userLocation as our current location and getDestination as our searched location/destination)
             float distance = calculateDistance(userLocation, getDestination);
             txtDistance.setText(" " + distance + " meters");
         } else {
             Toast.makeText(MapsActivity.this, " Cannot define address", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     // Pass searched destination to calculate distance between current location
@@ -173,7 +175,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
-    // This method is responsible for
+    // This method is responsible for getting the latitude and longitude of the startLocation (our current location) and endLocation (our searched location/ destination)
     private float calculateDistance(LatLng startLatLng, LatLng endLatLng) {
         Location startLocation = new Location("");
         startLocation.setLatitude(startLatLng.latitude);

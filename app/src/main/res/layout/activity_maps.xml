@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".MapsActivity" >
 
+<!--    this fragment will be use to store the map -->
     <androidx.fragment.app.FragmentContainerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,6 +15,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         tools:layout ="@layout/activity_maps" />
 
+<!--    this is the SearchView provided by appcombat.widget we will use this to input and query our destination-->
     <androidx.appcompat.widget.SearchView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -26,6 +28,7 @@
         android:focusable="false"
         android:background="@color/white"/>
 
+<!--    this button will use to calculate the distance from our current location to our destination (in meters)-->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -35,6 +38,7 @@
         android:text="Calculate"
         android:background="@color/white"/>
 
+<!--    this text view will display the distances from our location to our destination-->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
