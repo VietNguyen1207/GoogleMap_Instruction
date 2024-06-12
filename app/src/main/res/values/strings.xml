@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">GoogleMap_Instruction</string>
     <string name="title_activity_maps">MapsActivity</string>
-    <string name="api">AIzaSyDAJ9UijdeugFRmcWml3zXBJ8t0a-n1_dw</string>
+    <string name="api"></string>
 </resources>
